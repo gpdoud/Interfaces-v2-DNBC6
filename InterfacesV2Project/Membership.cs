@@ -4,25 +4,21 @@ using System.Text;
 
 namespace InterfacesV2Project {
 
-    public class Product : ICalcSales {
+    public class Membership : ICalcSales {
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
+        public int Fee { get; set; }
         public int Units { get; set; }
 
         public decimal CalcSales() {
-            return Price * Units;
+            return (decimal) Fee * Units;
         }
 
-        public string About() {
-            return "About Products";
-        }
-
-        public Product(int id, string name, decimal price, int units) {
+        public Membership(int id, string name, int fee, int units) {
             this.Id = id;
             this.Name = name;
-            this.Price = price;
+            this.Fee = fee;
             this.Units = units;
         }
     }
